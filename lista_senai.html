@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Aprovados</title>
+    <link rel="stylesheet" href="style.css">
+    <script> script.js</script>
+</head>
+<body>
+    <img src="assets/logo2.png" alt="Logo SENAI">
+    <h3>Lista de aprovados</h3>
+
+    <div class="input-group">
+        <input type="text" id="novoAprovado" placeholder="Digite o nome aqui...">
+        <button id="btnAdicionar">Adicionar</button>
+    </div>
+
+    <ol id="listaAprovados">
+        <li>Maria</li>
+        <li>Jose</li>
+        <li>Maria</li>
+    </ol>
+
+    <button onclick="window.location.href='index.html'">Home</button>
+
+    <script>
+        const btnAdicionar = document.getElementById('btnAdicionar');
+        const inputAprovado = document.getElementById('novoAprovado');
+        const lista = document.getElementById('listaAprovados');
+
+        btnAdicionar.onclick = function() {
+            const nome = inputAprovado.value.trim();
+
+            if (nome !== "") {
+                const novoItem = document.createElement('li');
+                novoItem.textContent = nome;
+                lista.appendChild(novoItem);
+                inputAprovado.value = "";
+                inputAprovado.focus();
+            }
+        };
+
+        inputAprovado.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                btnAdicionar.click();
+            }
+        });
+    </script>
+</body>
+</html>
