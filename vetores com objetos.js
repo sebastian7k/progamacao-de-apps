@@ -61,3 +61,7 @@ const usuarioCom45 = listaDeUsuarios.find(usuario => usuario.idade === 45);
 if (usuarioCom45) {
     console.log(`${usuarioCom45.nome} tem ${usuarioCom45.idade} anos.`);
 }
+
+console.log("\nNa lista de ususarios somando todas as idades:  ")
+const somandoIdades = listaDeUsuarios.reduce((total,usuarios)=> total + usuarios.idade, 0)
+console.log(somandoIdades)
