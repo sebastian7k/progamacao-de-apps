@@ -7,11 +7,29 @@ const listaDeAluanos = [
 ]
 
 console.log("Encontre a aluna marta e mostre o nome e a media dela")
-const nmarta = listaDeAluanos.find(aluno => aluno.nome === "Marta");
+
+const marta = listaDeAluanos.find(aluno => aluno.nome === "Marta")
+
 console.log(`${marta.nome} tem nota ${marta.nota}`)
 
-console.log("Mostre a media geral da turma. ")
+console.log("Mostre a media geral da turma.")
+
+const somaNotas = listaDeAluanos.reduce((soma, aluno) => soma + aluno.nota, 0)
+
+const media = somaNotas / listaDeAluanos.length
+
+console.log("Média da turma:", media)
 
 console.log("Mostre o nome e a nota dos alunos com nota abaixo de 7.0")
 
-console.log("Mostre apenas o nome dos alnos com nota maior ou menor que 7.0")
+const abaixoDeSete = listaDeAluanos.filter(aluno => aluno.nota < 7)
+
+abaixoDeSete.forEach(aluno => {
+    console.log(`${aluno.nome} - ${aluno.nota}`)
+})
+
+console.log("Mostre apenas o nome dos alunos")
+
+const nomes = listaDeAluanos.map(aluno => aluno.nome)
+
+console.log(nomes)

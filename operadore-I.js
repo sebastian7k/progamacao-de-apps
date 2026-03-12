@@ -1,4 +1,4 @@
-// operadores logicos
+d// operadores logicos
 
 
 let idade = 10
