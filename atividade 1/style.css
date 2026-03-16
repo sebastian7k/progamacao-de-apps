@@ -1,0 +1,122 @@
+/* Importando fontes com visual forte e moderno do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Fundo escuro focado no preto absoluto e cinza escuro */
+    background-color: #0d0d0d;
+    background-image: radial-gradient(circle at center, #1f1f1f 0%, #000000 100%);
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: #121212;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 450px;
+    /* Borda superior vermelha e sombra com brilho sutil (estilo Post Human) */
+    border-top: 5px solid #d90429;
+    border-bottom: 1px solid #333;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(217, 4, 41, 0.15);
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    /* Efeito de texto "rasgado" ou de alto contraste */
+    text-shadow: 2px 2px 0px #d90429; 
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #888;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #000;
+    border: 1px solid #444;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    border-radius: 2px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #d90429;
+    box-shadow: 0 0 8px rgba(217, 4, 41, 0.4);
+}
+
+button {
+    width: 100%;
+    background-color: #d90429;
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 15px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #ef233c;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Estilos para o resultado da tabuada que será injetado pelo JS */
+#resultadoTabuado {
+    margin-top: 25px;
+    text-align: left;
+}
+
+#resultadoTabuado p {
+    background-color: #1a1a1a;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-left: 3px solid #d90429;
+    font-family: 'Roboto', monospace;
+    font-size: 1.1rem;
+    color: #ccc;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Pequena animação para quando a tabuada aparecer */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
