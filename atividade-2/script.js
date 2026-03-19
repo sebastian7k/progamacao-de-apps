@@ -1,19 +1,31 @@
-function calcular (){
-    let n1 = Number(document.getElementById("n1").value)
-    let n2 = Number(document.getElementById("n2").value)
+document.getElementById('btnCalcular').addEventListener('click', function() {
+const nota1 = parseFloat(document.getElementById('nota1').value);
+const nota2 = parseFloat(document.getElementById('nota2').value);
+const nota3 = parseFloat(document.getElementById('nota3').value);
+const divResultados = document.getElementById('resultados');
 
-    let soma = n1 + n2
-    let media= soma/ 2
-    let produto = n1 * n2
-    let maior = Math.max(n1,n2)
-    let menor = Math.min(n1,n2)
-
-    let res = document.getElementsById("resultado")
-    
-    res.innerHTL= `
-    Soma: ${soma} <br>
-    Média: ${media} <br>
-    Produto: ${produto} <br>
-    Maior número: ${maior} <br>
-    Menor número: ${menor}`
+if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
+    alert("Ops! Por favor, preencha os três campos com números válidos.");
+    return;
 }
+const media = (nota1 + nota2 + nota3) / 3;
+
+let status = '';
+let classeCor = '';
+
+if (media >= 7) {
+    status = 'Aprovado';
+    classeCor = 'verde';
+} else if (media >= 5) { 
+    status = 'Em Recuperação';
+    classeCor = 'amarelo';
+} else {
+    status = 'Reprovado';
+    classeCor = 'vermelho';
+}
+divResultados.classList.remove('escondido');
+divResultados.innerHTML = `
+    <div class="linha-resultado">Média: <span>${media.toFixed(2)}</span></div>
+    <div class="linha-resultado">Status: <span class="${classeCor}">${status}</span></div>
+`;
+}   );

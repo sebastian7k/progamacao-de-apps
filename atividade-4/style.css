@@ -1,0 +1,156 @@
+:root {
+    --bg-page: #fef2f2; /* Fundo levemente avermelhado e suave */
+    --bg-card: #ffffff;
+    --text-title: #450a0a; /* Vermelho muito escuro para contraste */
+    --text-body: #7f1d1d;
+    --primary: #ef4444; /* Vermelho "Maçã" */
+    --primary-hover: #dc2626;
+    --border: #fecaca;
+    --focus-ring: rgba(239, 68, 68, 0.25);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-page);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.card {
+    background: var(--bg-card);
+    padding: 40px 32px;
+    border-radius: 24px;
+    box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.1), 0 8px 10px -6px rgba(239, 68, 68, 0.05);
+    border: 1px solid #fee2e2;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.logo {
+    width: 75px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-title);
+    letter-spacing: -0.5px;
+}
+
+.subtitulo {
+    color: var(--text-body);
+    font-size: 14px;
+    margin-bottom: 28px;
+    line-height: 1.5;
+    background-color: #fff1f2;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px dashed var(--border);
+}
+
+.input-group {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-title);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    font-size: 16px;
+    color: var(--text-title);
+    background-color: #fef2f2;
+    transition: all 0.2s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px var(--focus-ring);
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#resultado {
+    margin-top: 32px;
+    text-align: left;
+    border-top: 1px solid #fecaca;
+    padding-top: 24px;
+}
+
+#resultado p {
+    font-size: 14px;
+    color: var(--text-body);
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.escondido {
+    display: none;
+}
+
+.status-box {
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Verde remetendo a "Compra/Dinheiro" */
+.verde {
+    background-color: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.valor-destaque {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: #15803d;
+    margin-top: 5px;
+}
