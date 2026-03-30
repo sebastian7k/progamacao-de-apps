@@ -1,0 +1,9 @@
+.mensagem h1{
+    color: blueviolet;
+    margin: 10px 0;
+}
+
+.mensagem p{
+    color: aqua;
+    margin: 10px 0;
+}

@@ -1,0 +1,64 @@
+.info-aluno {
+    background: radial-gradient(circle at top, #1a0033, #000000);
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 350px;
+    font-family: 'Orbitron', 'Arial', sans-serif;
+    border: 2px solid #ff00cc;
+    box-shadow: 
+        0 0 10px #ff00cc,
+        0 0 20px #00ffff,
+        inset 0 0 10px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* efeito de luz piscando */
+.info-aluno::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, transparent, rgba(0,255,255,0.2), transparent);
+    transform: rotate(25deg);
+    animation: brilho 4s linear infinite;
+}
+
+@keyframes brilho {
+    0% {
+        transform: translateX(-100%) rotate(25deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(25deg);
+    }
+}
+
+.info-aluno h2 {
+    color: #00ffff;
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    text-shadow: 
+        0 0 5px #00ffff,
+        0 0 10px #ff00cc;
+    letter-spacing: 2px;
+}
+
+.info-aluno p {
+    margin: 10px 0;
+    font-size: 1rem;
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(255, 0, 204, 0.1);
+    border-left: 4px solid #00ffff;
+    box-shadow: 0 0 5px rgba(0,255,255,0.3);
+}
+
+.info-aluno p:hover {
+    transform: scale(1.03);
+    transition: 0.2s;
+    box-shadow: 0 0 10px #ff00cc;
+}
